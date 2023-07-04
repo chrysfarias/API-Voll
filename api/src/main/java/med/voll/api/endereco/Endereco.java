@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import med.voll.api.medico.DadosCadastroMedico;
 
 @Embeddable
 @Getter
@@ -20,5 +21,17 @@ public class Endereco {
 	private String complemento;
 	private String cidade;
 	private String uf;
+	
+	public Endereco(DadosEndereco dados) {
+		
+		this.logradouro = dados.logradouro();
+		this.bairro = dados.bairro();
+		this.cep =  dados.cep();
+		this.numero = dados.numero();
+		this.complemento = dados.complemento();
+		this.cidade = dados.cidade();
+		this.uf = dados.uf();
+		
+	}
 
 }

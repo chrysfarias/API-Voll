@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import med.voll.api.medico.DadosCadastroMedico;
 import med.voll.api.medico.Medico;
 import med.voll.api.medico.MedicoRepository;
@@ -19,10 +20,8 @@ public class MedicoController {
 	
 	@PostMapping
 	public void cadastrar(@RequestBody DadosCadastroMedico dados) {
-	
-		Medico medicoEntidade = dados.toMedico();
 		
-		repository.save(medicoEntidade);
+		repository.save(new Medico(dados));
 	}
 
 }

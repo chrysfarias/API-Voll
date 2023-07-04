@@ -12,7 +12,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import med.voll.api.endereco.DadosEndereco;
 import med.voll.api.endereco.Endereco;
 
 
@@ -24,6 +23,7 @@ import med.voll.api.endereco.Endereco;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Medico {
+	
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -38,6 +38,15 @@ public class Medico {
 	
 	@Embedded
 	private Endereco endereco;
+	
+	public Medico(DadosCadastroMedico dados) {
+		this.nome = dados.nome();
+		this.email = dados.email();
+		this.crm = dados.crm();
+		this.especialidade = dados.especialidade();
+		this.endereco = new Endereco(dados.endereco());
+		
+	}
 
 
 	
