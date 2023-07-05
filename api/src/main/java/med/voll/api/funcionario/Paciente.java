@@ -1,55 +1,39 @@
-package med.voll.api.medico;
+package med.voll.api.funcionario;
+
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import med.voll.api.endereco.Endereco;
 
 
-@Table(name="medicos")
-@Entity(name="Medico")
+@Table(name="pacientes")
+@Entity(name="Paciente")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(of = "id")
-public class Medico {
-	
+public class Paciente {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String email;
-	private String crm;
 	private String telefone;
-	
-	
-	@Enumerated(EnumType.STRING)
-	private Especialidade especialidade;
+	private String cpf;
 	
 	@Embedded
 	private Endereco endereco;
 	
-	public Medico(DadosCadastroMedico dados) {
+	public Paciente(DadosCadastroPaciente dados) {
 		this.nome = dados.nome();
 		this.email = dados.email();
-		this.crm = dados.crm();
-		this.especialidade = dados.especialidade();
 		this.telefone = dados.telefone();
-		this.endereco = new Endereco(dados.endereco());
+		this.cpf = dados.cpf();
+		this.endereco = new Endereco(dados.endereco());		
 	}
-
-
 	
 	
-
 }
