@@ -1,6 +1,6 @@
 ## 📑 Descrição do projeto
 
-:clapper: &nbsp; Projeto consiste em uma clínica médica fictícia que precisa de um aplicativo para monitorar o cadastro de médicos, pacientes e agendamento de consultas.
+:clapper: &nbsp; Projeto consiste em uma api para o cadastro de médicos, pacientes e agendamento de consultas.
 
 
 <br/>
