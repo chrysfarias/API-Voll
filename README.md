@@ -21,7 +21,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 * Spring Boot 3
 * Java 17
 * Lombok
-* PostgreSQL
+* MySQL
 * JPA/Hibernate
 * Maven
 * Insomnia
